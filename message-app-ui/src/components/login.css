@@ -1,0 +1,125 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    align-items: top;
+  }
+.body-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    padding-top: 20px; /* Optional space between the header and login container */
+  }
+
+  .login-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 450px;
+    max-width: 100%;
+    min-height: 400px; /* Set a minimum height */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 5px;
+    color: #333;
+  }
+
+  .login-container label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 14px;
+  }
+
+  .login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  .login-container button {
+    width: 100%;
+    padding: 10px;
+    /* background-color: #6a11cb; */
+    /* background-color: #3b82f6; */
+    background-color: rgb(165, 134, 77);
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .login-container button:hover {
+    background-color: #6a11cb;
+  }
+
+  .login-container .forgot-password {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .login-container .forgot-password a {
+    color: #6a11cb;
+    text-decoration: none;
+  }
+
+  .login-container .forgot-password a:hover {
+    text-decoration: underline;
+  }
+
+  .modal-content {
+    position: fixed;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px; /* or try width: 50%; */
+    height: auto;
+    text-align: center;
+    
+}
+
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 100;
+    text-align: center;
+  }
+  
+  .modal-content button {
+    margin: 10px;
+    /* margin-top: 3px; */
+    padding: 8px 12px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+
+  .modal-content button:hover {
+    background-color: green;
+  }
+
+  .modal-content img{
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px; 
+  }

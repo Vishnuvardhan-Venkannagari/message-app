@@ -1,0 +1,12 @@
+aioredis
+aioredis-cluster
+pandas
+pydantic
+fastapi
+uvicorn
+pymongo
+motor
+passlib[bcrypt]
+pyjwt
+jwt
+redis
