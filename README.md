@@ -3,7 +3,48 @@
 
 A full-stack real-time messaging platform built using **FastAPI**, **WebSockets**, **MongoDB**, **Redis**, and a **React (Vite)** frontend. It enables real-time one-to-one chat with authentication, WebSocket messaging, persistent chat history, and secure HTTPS deployment via NGINX and Certbot.
 
+
+Register two users via the signup page.
+
+Login as User A and view all other users on the sidebar.
+
+Click on User B → Chat room is created (if it doesn't already exist).
+
+Send message from User A to User B.
+
+Log out and login as User B, and refresh to see chat room and the latest message.
+
+Chat updates in real-time using WebSocket (ws://localhost:9010/ws/{user_id}).
+
 ---
+
+## ✅ Pre-Requisites
+
+Before running the project, ensure the following tools are installed on your system:
+
+### 🔧 Required Installations
+
+- 🐍 **Python 3.7+**  
+  Required for running the FastAPI backend.
+
+- 🟢 **Node.js (v16+)**  
+  Required for running the React frontend via Vite.
+
+- ⚛️ **React (via Vite)**  
+  Will be set up automatically with `npm install`.
+
+- 🍃 **MongoDB**  
+  Install and configure MongoDB with the following credentials:
+  - **Username:** `admin`  
+  - **Password:** `admin`  
+  - Database: `message_app`
+
+- 🚀 **Redis**  
+  Required for handling real-time WebSocket broadcasting and caching.
+
+### 📌 Tip
+
+Use tools like `brew` (macOS), `apt` (Ubuntu), or download installers from the official websites for each dependency.
 
 ## 📁 Project Structure
 
@@ -33,7 +74,6 @@ message-app/
 - 💬 Real-time messaging using WebSockets
 - 📁 MongoDB for persistent chat storage
 - ⚡ Redis for fast context and temporary storage
-- 🌍 Secure HTTPS with NGINX + Let's Encrypt
 - 🧩 Scalable and modular architecture
 - 🖥️ UI powered by React + Vite
 
