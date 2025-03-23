@@ -1,5 +1,5 @@
 import conf from "../conf/conf.ts";
-import store from "../store/store" 
+// import store from "../store/store" 
 
 interface chatData {
     token: string
@@ -11,6 +11,7 @@ export class ChatInterface {
     private api_url: string
     constructor(){
         this.api_url = conf.apiUrl
+        console.log(this.api_url)
     }
     
     async getAllUsers(token: string): Promise<any>{

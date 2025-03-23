@@ -20,6 +20,7 @@ const Login: React.FC = () => {
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
     const [isLoading, setIsLoading] = useState<boolean>(true)
     const { register, handleSubmit, formState: { errors } } = useForm<LoginFormInputs>()
+    console.log(isLoading)
     const login: SubmitHandler<LoginFormInputs> = async (data) => {
         setError("")
         setIsSubmitting(true)

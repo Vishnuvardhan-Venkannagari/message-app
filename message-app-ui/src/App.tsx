@@ -21,6 +21,7 @@ const App = () => {
     if (token && token !== 'undefined' && userRaw && userRaw !== "undefined") {
       try {
         const user = JSON.parse(userRaw)
+        console.log(loading)
         dispatch(setAuth(true))  
         dispatch(setUser(user)) 
         dispatch(setToken(token))  

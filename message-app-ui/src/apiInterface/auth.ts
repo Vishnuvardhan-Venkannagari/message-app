@@ -1,6 +1,4 @@
-import { BiBody } from "react-icons/bi";
 import conf from "../conf/conf.ts";
-import store from "../store/store" 
 
 interface LoginInput {
     email: string
@@ -37,6 +35,7 @@ export class AuthInterface {
     // private token: string
     constructor(){
         this.api_url = conf.apiUrl
+        console.log(this.api_url)
         // const token = store.getState().auth.authtoken
         // if (!token) throw new Error("Missing token")
         // this.token = token
