@@ -10,7 +10,7 @@ import json
 
 router = APIRouter()
 
-mongo_client = AsyncIOMotorClient("mongodb://admin:admin@localhost:27017")
+mongo_client = AsyncIOMotorClient("mongodb://localhost:27017")
 mongo_db = mongo_client["message_app"]
 message_collection = mongo_db["messages"]
 
@@ -76,6 +76,6 @@ async def message(websocket: WebSocket,id: str):
     except WebSocketDisconnect:
         print("WebSocket disconnected")
         await sockets.disconnect(websocket)
-        
+
     except Exception as e:
         print("Error occured", e)

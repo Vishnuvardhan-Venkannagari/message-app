@@ -34,7 +34,7 @@ app.add_middleware(
 app.include_router(websocket_router)
 
 package_dir = os.getcwd()
-mongo_client = AsyncIOMotorClient("mongodb://admin:admin@localhost:27017")
+mongo_client = AsyncIOMotorClient("mongodb://localhost:27017")
 mongo_db = mongo_client["message_app"]
 user_collection = mongo_db["messages-users"]
 message_collection = mongo_db["messages"]

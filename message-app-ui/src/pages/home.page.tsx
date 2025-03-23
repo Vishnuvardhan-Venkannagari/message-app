@@ -11,6 +11,7 @@ interface Chat {
   _id: string
   participants: string[]
   last_message: string
+  receiver_name: string
 }
 
 const Home: React.FC = () => {
