@@ -10,3 +10,4 @@ passlib[bcrypt]
 pyjwt
 jwt
 redis
+uvicorn[standard]
