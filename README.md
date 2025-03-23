@@ -16,7 +16,7 @@ Log out and login as User B, and refresh to see chat room and the latest message
 
 Chat updates in real-time using WebSocket (ws://localhost:9010/ws/{user_id}).
 
----
+---------------------------------------------------------------------------------------------
 
 ## ✅ Pre-Requisites
 
@@ -46,6 +46,7 @@ Before running the project, ensure the following tools are installed on your sys
 
 Use tools like `brew` (macOS), `apt` (Ubuntu), or download installers from the official websites for each dependency.
 
+---------------------------------------------------------------------------------------------
 ## 📁 Project Structure
 
 ```
@@ -65,7 +66,7 @@ message-app/
 │   └── ...                 # Components, routes, pages, assets, styling
 ```
 
----
+---------------------------------------------------------------------------------------------
 
 ## 🚀 Features
 
@@ -77,7 +78,7 @@ message-app/
 - 🧩 Scalable and modular architecture
 - 🖥️ UI powered by React + Vite
 
----
+---------------------------------------------------------------------------------------------
 
 ## ⚙️ Backend Setup
 
@@ -125,8 +126,8 @@ python3 main.py
   - Saves message to MongoDB.
   - Broadcasts to all active connections using `ConnectionManager`.
 
----
----
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
 
 ## 🌐 Frontend Setup
 
@@ -157,9 +158,9 @@ Your production build will be located inside `message-app-ui/dist`.
 - Messages sent through WebSocket.
 - Incoming messages are added to state and displayed in real-time.
 
----
+---------------------------------------------------------------------------------------------
 
----
+---------------------------------------------------------------------------------------------
 
 ## 📡 WebSocket Endpoint
 
@@ -167,7 +168,7 @@ Your production build will be located inside `message-app-ui/dist`.
 - Connects each client to their WebSocket channel
 - Messages are saved to MongoDB and broadcasted to all active clients
 
----
+---------------------------------------------------------------------------------------------
 
 ## 🔄 Future Improvements
 
@@ -176,13 +177,13 @@ Your production build will be located inside `message-app-ui/dist`.
 - ✅ File/image sharing.
 - ✅ Read receipts.
 
----
+---------------------------------------------------------------------------------------------
 
 ## 🧠 Author
 
 Made with ❤️ by [Vishnuvardhan Venkannagari](https://github.com/Vishnuvardhan-Venkannagari)
 
----
+---------------------------------------------------------------------------------------------
 
 ## 🔄 Deployment Recap
 
@@ -194,14 +195,14 @@ Made with ❤️ by [Vishnuvardhan Venkannagari](https://github.com/Vishnuvardha
 | Database     | MongoDB             |
 | Cache/Queue  | Redis               |
 
----
+---------------------------------------------------------------------------------------------
 
 ## 🙌 Author
 
 Developed by **Vishnuvardhan Venkannagari**  
 🔗 [GitHub](https://github.com/Vishnuvardhan-Venkannagar)
 
----
+---------------------------------------------------------------------------------------------
 
 ## 📝 License
 
