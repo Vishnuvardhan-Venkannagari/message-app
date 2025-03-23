@@ -31,7 +31,7 @@ const ChatRoom: React.FC<ChatRoomProps> = ({ chatId, onClose }) => {
 
     fetchMessages()
 
-    ws.current = new WebSocket(`ws://localhost:8000/ws/${user.id}`)
+    ws.current = new WebSocket(`ws://localhost:9010/ws/${user.id}`)
     ws.current.onmessage = (event) => {
       const msg = JSON.parse(event.data)
       if (msg.room_id === chatId) {
