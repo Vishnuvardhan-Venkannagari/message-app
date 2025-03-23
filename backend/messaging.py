@@ -21,6 +21,7 @@ async def getMessages(room_id: str):
         messages.append(msg)
     return messages
 
+
 class messgaeData(pydantic.BaseModel):
     msg: str
 

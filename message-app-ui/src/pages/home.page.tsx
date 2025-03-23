@@ -63,19 +63,19 @@ const Home: React.FC = () => {
                             <span className="text-sm text-gray-400">Click to open</span>
                         </div>
 
-                        <p className="text-gray-500 text-sm mt-2">
+                        {/* <p className="text-gray-500 text-sm mt-2">
                             Last Message:{' '}
                             {chat.last_message ? (
                             <span className="text-gray-700 font-medium">"{chat.last_message}"</span>
                             ) : (
                             'No messages yet'
                             )}
-                        </p>
+                        </p> */}
                         </div>
                     ))}
                     </div>
                 ) : (
-                    <p className="text-gray-600 text-center">No chat rooms available.</p>
+                    <p className="text-gray-600 text-center">No recent chat available.</p>
                 )}
                 </div>
             )}

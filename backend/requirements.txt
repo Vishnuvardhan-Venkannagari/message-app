@@ -11,3 +11,4 @@ pyjwt
 jwt
 redis
 uvicorn[standard]
+bson

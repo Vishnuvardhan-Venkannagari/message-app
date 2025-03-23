@@ -6,6 +6,7 @@ import pkgutil
 import traceback
 import os
 import datetime
+from bson import ObjectId
 import pydantic
 import contextvars
 import jwt
@@ -34,11 +35,11 @@ app.add_middleware(
 app.include_router(websocket_router)
 
 package_dir = os.getcwd()
-mongo_client = AsyncIOMotorClient("mongodb://localhost:27017")
+mongo_client = AsyncIOMotorClient("mongodb://admin:admin@localhost:27017")
 mongo_db = mongo_client["message_app"]
 user_collection = mongo_db["messages-users"]
 message_collection = mongo_db["messages"]
-chat_collection = mongo_db["chat"]
+chat_collection = mongo_db["chat-rooms"]
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
@@ -197,6 +198,7 @@ async def login(data: registerData, response: fastapi.Response):
         "created_at": datetime.datetime.utcnow()
     }
     result = await user_collection.insert_one(user_doc)
+    print(result)
     mongo_id = str(result.inserted_id)
     hashed_password = await hash_password(password)
     await rcon.set(mongo_id, hashed_password)
@@ -231,7 +233,9 @@ async def me(request: fastapi.Request):
 @app.get("/api/all-users", tags=["Users"])
 async def getAllUsers():
     auth_user = context.context.get('auth_user', {})
-    users_cursor = user_collection.find()
+    user_id = str(auth_user["user_data"].get("_id"))
+    query = {"_id": {"$ne": ObjectId(user_id)}}
+    users_cursor = user_collection.find(query)
     users = []
     async for usr in users_cursor:
         usr["_id"] = str(usr["_id"])
