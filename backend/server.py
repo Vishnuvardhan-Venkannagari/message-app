@@ -198,7 +198,6 @@ async def login(data: registerData, response: fastapi.Response):
         "created_at": datetime.datetime.utcnow()
     }
     result = await user_collection.insert_one(user_doc)
-    print(result)
     mongo_id = str(result.inserted_id)
     hashed_password = await hash_password(password)
     await rcon.set(mongo_id, hashed_password)

@@ -50,7 +50,6 @@ sockets = ConnectionManager()
 @router.websocket("/ws/{id}")
 async def message(websocket: WebSocket,id: str):
     await sockets.connect(websocket, id)
-    print("Socket connection created")
     rcon = await get_redis_connection()
     is_success = False
     startTime = datetime.datetime.utcnow().timestamp()
@@ -59,7 +58,6 @@ async def message(websocket: WebSocket,id: str):
         while True:
             data = await websocket.receive_text()
             msg_data = json.loads(data)
-            print("msg_data", msg_data)
             message_doc = {
                 "room_id": msg_data.get("room_id"),
                 "sender_id": msg_data.get("sender_id"),
@@ -70,7 +68,6 @@ async def message(websocket: WebSocket,id: str):
             result = await message_collection.insert_one(message_doc)
             message_doc["_id"] = str(result.inserted_id)
             message_doc["chat_id"] = message_doc["room_id"]
-            print(message_doc)
             await sockets.broadcast(json.dumps(message_doc))
             print("Broadcasted message:", message_doc)
 

@@ -15,6 +15,8 @@ interface ChatSidebarProps {
 const ChatSidebar: React.FC<ChatSidebarProps> = ({ onSelectChat }) => {
   const [users, setUsers] = useState<User[]>([])
   const authtoken = useSelector((state: RootState) => state.auth.authtoken)
+  const authUser = useSelector((state: RootState) => state.auth.userData)
+  console.log("authUser",authUser)
 
   useEffect(() => {
     fetchUsers()
@@ -33,8 +35,18 @@ const ChatSidebar: React.FC<ChatSidebarProps> = ({ onSelectChat }) => {
 
   return (
     <div className="w-1/4 h-screen bg-gray-100 p-4 overflow-y-auto border-r shadow-sm">
+      <h2 className="font-semibold text-sm text-gray-600 mb-2 uppercase">Logged In As</h2>
+      <div className="mb-6">
+        {/* <div className="text-lg font-bold text-gray-900">{authUser?.name}</div> */}
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center font-semibold text-blue-700">
+            {authUser?.name?.[0]?.toUpperCase()}
+          </div>
+          <div className="text-lg font-bold text-gray-900">{authUser?.name}</div>
+        </div>
+        <div className="h-[2px] bg-blue-500 w-full mt-1 rounded"></div>
+      </div>
       <h2 className="font-bold text-lg mb-4 text-gray-700">All Users</h2>
-
       <div className="space-y-3">
         {users.map(user => (
           <div

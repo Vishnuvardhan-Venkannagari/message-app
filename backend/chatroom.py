@@ -15,11 +15,14 @@ router = APIRouter(prefix="/chats",  tags=["Chats"])
 async def getChats():
     auth_user = context.context.get('auth_user', {})
     user_id = str(auth_user["user_data"].get("_id"))
-    chat_cursor = chat_collection.find({"participants": { "$in": [user_id] }
-    }).sort("timestamp", -1).limit(50)
+    user_name = auth_user["user_data"].get("name")
+    chat_cursor = chat_collection.find({"participants": { "$in": [user_id] }}).sort("timestamp", -1).limit(50)
     chats = []
     async for msg in chat_cursor:
         msg["_id"] = str(msg["_id"])
+        for name in msg["participant_names"]:
+            if name != user_name:
+                msg["receiver_name"] = name
         if user_id == msg["_id"]:
             continue
         chats.append(msg)
@@ -45,6 +48,7 @@ async def createChatRoom(data: chatroomData):
     chat_room_doc = {
        "user_id": user_id,
        "participants": participants,  
+       "participant_names": [data["receiver_name"], auth_user["user_data"].get("name")],
        "sender_id": user_id,
        "receiver_id": data["to_user_id"],
        "receiver_name": data["receiver_name"],
